@@ -113,17 +113,17 @@
 (evil-add-hjkl-bindings magit-log-mode-map 'emacs)
 (evil-add-hjkl-bindings magit-commit-mode-map 'emacs)
 (evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
-  "K" 'magit-discard-item
-  "L" 'magit-key-mode-popup-logging)
+  "K" 'magit-discard
+  "L" 'magit-log-popup)
 (evil-add-hjkl-bindings magit-status-mode-map 'emacs
-  "K" 'magit-discard-item
-  "l" 'magit-key-mode-popup-logging
-  "h" 'magit-toggle-diff-refine-hunk)
+  "K" 'magit-discard
+  "l" 'magit-log-popup
+  "h" 'magit-diff-toggle-refine-hunk)
 
 (setq evil-shift-width 2)
 
-;;; enable ace-jump mode with evil-mode
-(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+;;; enable avy with evil-mode
+(define-key evil-normal-state-map (kbd "SPC") 'avy-goto-word-1)
 
 ;;; snagged from Eric S. Fraga
 ;;; http://lists.gnu.org/archive/html/emacs-orgmode/2012-05/msg00153.html
