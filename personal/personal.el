@@ -32,5 +32,27 @@
 (require 'shell-command)
 (shell-command-completion-mode)
 
+; Disable unwanted gui features
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(tooltip-mode -1)
+
+; TODO: rebind this instead
+(put 'suspend-frame 'disabled t)
+
+;(add-to-list 'auto-mode-alist '("\\.sbt\\'" . sbt-mode))
+;;; personal-ensime --- ensime
+;;; Commentary:
+
+;;; Code:
+(prelude-require-package 'ensime)
+
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+;;; personal-ensime.el ends here
+
+
 (require 'bash-completion)
 (bash-completion-setup)
